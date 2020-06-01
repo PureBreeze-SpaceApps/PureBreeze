@@ -77,15 +77,36 @@
 
 		<div class="row trunk-section">
 			<div class="col-lg-7 text-center">
-				<div id="linked_multi1">
-
+				<div id="temperature">
 				</div>
-				<div id="linked_multi2">
-
+				<div id="humidity">
 				</div>
 				<div id="airflow">
-
-				</div>				
+				</div>	
+				<div id="airpressure">
+				</div>	
+				<div id="no">
+				</div>		
+				<div id="no2">
+				</div>	
+				<div id="o3">
+				</div>		
+				<div id="co">
+				</div>
+				<div id="so2">
+				</div>	
+				<div id="h2s">
+				</div>		
+				<div id="co2">
+				</div>		
+				<div id="pm1">
+				</div>		
+				<div id="pm25">
+				</div>		
+				<div id="pm4">
+				</div>			
+				<div id="pm10">
+				</div>					
 			</div>
 		</div>
 
@@ -105,7 +126,7 @@ d3.json('data/temperature.json', function(data) {
         width: 600,
         height: 200,
         right: 40,
-        target: '#linked_multi1',
+        target: '#temperature',
         linked: true,
         legend: ['Inflow','Outflow']
     });
@@ -123,7 +144,7 @@ d3.json('data/humidity.json', function(data) {
         width: 600,
         height: 200,
         right: 40,
-        target: '#linked_multi2',
+        target: '#humidity',
         linked: true,
         legend: ['Inflow','Outflow']
     });
@@ -146,6 +167,205 @@ d3.json('data/airflow.json', function(data) {
         legend: ['Inflow','Outflow']
     });
 });
+
+d3.json('data/airpressure.json', function(data) {
+    for (var i = 0; i < data.length; i++) {
+        data[i] = MG.convert.date(data[i], 'date', '%Y-%m-%d %H:%M:%S');
+    }
+
+    MG.data_graphic({
+        title: "Air Pressure",
+        description: "Air Pressure",
+        data: data,
+        width: 600,
+        height: 200,
+        right: 40,
+        target: '#airpressure',
+        linked: true,
+        legend: ['Inflow','Outflow']
+    });
+});
+
+d3.json('data/no.json', function(data) {
+    for (var i = 0; i < data.length; i++) {
+        data[i] = MG.convert.date(data[i], 'date', '%Y-%m-%d %H:%M:%S');
+    }
+
+    MG.data_graphic({
+        title: "NO",
+        description: "NO",
+        data: data,
+        width: 600,
+        height: 200,
+        right: 40,
+        target: '#no',
+        linked: true,
+        legend: ['Inflow','Outflow']
+    });
+});
+
+d3.json('data/no2.json', function(data) {
+    for (var i = 0; i < data.length; i++) {
+        data[i] = MG.convert.date(data[i], 'date', '%Y-%m-%d %H:%M:%S');
+    }
+
+    MG.data_graphic({
+        title: "NO2",
+        description: "NO2",
+        data: data,
+        width: 600,
+        height: 200,
+        right: 40,
+        target: '#no2',
+        linked: true,
+        legend: ['Inflow','Outflow']
+    });
+});
+
+d3.json('data/o3.json', function(data) {
+    for (var i = 0; i < data.length; i++) {
+        data[i] = MG.convert.date(data[i], 'date', '%Y-%m-%d %H:%M:%S');
+    }
+
+    MG.data_graphic({
+        title: "O3",
+        description: "O3",
+        data: data,
+        width: 600,
+        height: 200,
+        right: 40,
+        target: '#o3',
+        linked: true,
+        legend: ['Inflow','Outflow']
+    });
+});
+
+d3.json('data/co.json', function(data) {
+    for (var i = 0; i < data.length; i++) {
+        data[i] = MG.convert.date(data[i], 'date', '%Y-%m-%d %H:%M:%S');
+    }
+
+    MG.data_graphic({
+        title: "CO",
+        description: "CO",
+        data: data,
+        width: 600,
+        height: 200,
+        right: 40,
+        target: '#co',
+        linked: true,
+        legend: ['Inflow','Outflow']
+    });
+});
+
+d3.json('data/so2.json', function(data) {
+    for (var i = 0; i < data.length; i++) {
+        data[i] = MG.convert.date(data[i], 'date', '%Y-%m-%d %H:%M:%S');
+    }
+
+    MG.data_graphic({
+        title: "SO2",
+        description: "SO2",
+        data: data,
+        width: 600,
+        height: 200,
+        right: 40,
+        target: '#so2',
+        linked: true,
+        legend: ['Inflow','Outflow']
+    });
+});
+
+d3.json('data/h2s.json', function(data) {
+    for (var i = 0; i < data.length; i++) {
+        data[i] = MG.convert.date(data[i], 'date', '%Y-%m-%d %H:%M:%S');
+    }
+
+    MG.data_graphic({
+        title: "H2S",
+        description: "H2S",
+        data: data,
+        width: 600,
+        height: 200,
+        right: 40,
+        target: '#h2s',
+        linked: true,
+        legend: ['Inflow','Outflow']
+    });
+});
+
+d3.json('data/pm1.json', function(data) {
+    for (var i = 0; i < data.length; i++) {
+        data[i] = MG.convert.date(data[i], 'date', '%Y-%m-%d %H:%M:%S');
+    }
+
+    MG.data_graphic({
+        title: "PM1",
+        description: "PM1",
+        data: data,
+        width: 600,
+        height: 200,
+        right: 40,
+        target: '#pm1',
+        linked: true,
+        legend: ['Inflow','Outflow']
+    });
+});
+
+d3.json('data/pm25.json', function(data) {
+    for (var i = 0; i < data.length; i++) {
+        data[i] = MG.convert.date(data[i], 'date', '%Y-%m-%d %H:%M:%S');
+    }
+
+    MG.data_graphic({
+        title: "PM25",
+        description: "PM25",
+        data: data,
+        width: 600,
+        height: 200,
+        right: 40,
+        target: '#pm25',
+        linked: true,
+        legend: ['Inflow','Outflow']
+    });
+});
+
+d3.json('data/pm4.json', function(data) {
+    for (var i = 0; i < data.length; i++) {
+        data[i] = MG.convert.date(data[i], 'date', '%Y-%m-%d %H:%M:%S');
+    }
+
+    MG.data_graphic({
+        title: "PM4",
+        description: "PM4",
+        data: data,
+        width: 600,
+        height: 200,
+        right: 40,
+        target: '#pm4',
+        linked: true,
+        legend: ['Inflow','Outflow']
+    });
+});
+
+d3.json('data/pm10.json', function(data) {
+    for (var i = 0; i < data.length; i++) {
+        data[i] = MG.convert.date(data[i], 'date', '%Y-%m-%d %H:%M:%S');
+    }
+
+    MG.data_graphic({
+        title: "PM10",
+        description: "PM10",
+        data: data,
+        width: 600,
+        height: 200,
+        right: 40,
+        target: '#pm10',
+        linked: true,
+        legend: ['Inflow','Outflow']
+    });
+});
+
 
 </script>
 
